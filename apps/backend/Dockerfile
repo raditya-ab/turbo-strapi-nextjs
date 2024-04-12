@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:18-alpine
 
 ENV NODE_ENV development
 
@@ -12,7 +12,7 @@ RUN yarn global add @strapi/strapi@${STRAPI_VERSION}
 WORKDIR /app
 
 # Install app dependencies
-COPY  ["yarn.lock", "package.json", "./"] 
+COPY ["yarn.lock", "package.json", "./"]
 
 # Copy source files
 COPY . .
